@@ -15,7 +15,8 @@ import {ErrorSnackbar} from '../components/ErrorSnackbar/ErrorSnackbar'
 import {Login} from "../features/Login/Login";
 import {Navigate, Route, Routes} from "react-router-dom";
 import {CircularProgress} from "@mui/material";
-import {logOutTC} from "../features/Login/auth-reducer";
+import {loginTC, logOutTC} from "../features/Login/auth-reducer";
+import {LoginParamsType} from "../api/todolists-api";
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
  const logOutHandler = () => {
         dispatch(logOutTC())
  }
+
 
     if (!isInitialized){
         return <div
@@ -53,7 +55,8 @@ function App() {
                     </Typography>
 
 
-                    {isLoggedIn ? <Button color="inherit" onClick={logOutHandler}>LogOut</Button> : <Navigate to={'/login'}/>}
+                    {isLoggedIn && <Button color="inherit" onClick={logOutHandler}>LogOut</Button>}
+                    {!isLoggedIn && <Navigate to={'/login'}/> }
 
                 </Toolbar>
                 {status === 'loading' && <LinearProgress/>}
