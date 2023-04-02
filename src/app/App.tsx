@@ -51,7 +51,9 @@ function App() {
                     <Typography variant="h6">
                         News
                     </Typography>
-                    {isLoggedIn &&   <Button color="inherit" onClick={logOutHandler}>LogOut</Button>}
+
+
+                    {isLoggedIn ? <Button color="inherit" onClick={logOutHandler}>LogOut</Button> : <Navigate to={'/login'}/>}
 
                 </Toolbar>
                 {status === 'loading' && <LinearProgress/>}
