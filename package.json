@@ -2,7 +2,7 @@
   "name": "todo16v3",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://arapbaeva.github.io/task-manager-desk",
+  "homepage": "https://arapbaeva.github.io/task-manager-desk/",
   "dependencies": {
     "@emotion/react": "11.10.5",
     "@emotion/styled": "11.10.5",
